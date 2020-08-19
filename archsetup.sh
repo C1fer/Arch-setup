@@ -120,7 +120,7 @@ Server = https://repo.kitsuna.net/x86_64" | sudo tee /etc/pacman.conf >&-
 #Software installation
 sudo pacman -Syu --noconfirm pacman-contrib yay zsh-theme-powerlevel10k-git p7zip unrar git base-devel ninja cmake sdl2 qt5 python2 python-pip boost catch2 fmt libzip lz4 mbedtls nlohmann-json openssl opus zlib ccache zstd && yay -S --noconfirm conan ttf-meslo-nerd-font-powerlevel10k mesa-git lib32-mesa-git 
 echo 'source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme' '\nexport PATH="/usr/lib/ccache/bin/:$PATH"'>>! ~/.zshrc
-yay -S --noconfirm plasma-meta adapta-kde-git adapta-gtk-theme mkvtoolnix-gui spek-git spectacle-git brave qmplay2-git qbittorrent mangohud goverlay-git puddletag-qt5-git wine-tkg-staging-fsync-vkd3d-opt-git winetricks-git psensor corectrl-git ark gwenview krename steam gnome-disk-utility nano qdirstat-git grub-customizer systemd-swap schedtool kde-servicemenus-rootactions cronie modprobe-db ffmpegthumbs  neofetch
+yay -S --noconfirm plasma-meta adapta-kde-git adapta-gtk-theme mkvtoolnix-gui spek-git spectacle-git brave qmplay2-git qbittorrent mangohud goverlay-git puddletag-qt5-git wine-tkg-staging-fsync-vkd3d-opt-git winetricks-git psensor corectrl-git ark gwenview krename steam gnome-disk-utility nano qdirstat-git grub-customizer systemd-swap schedtool kde-servicemenus-rootactions cronie modprobe-db ffmpegthumbs  neofetch papirus-folders-git 
 sudo pacman -Rdd vim chromium discover oxygen plasma-thunderbolt
 yay -Sc --noconfirm && sudo pacman -Rns --noconfirm $(pacman -Qtdq)
 
@@ -159,6 +159,9 @@ EndSection' | sudo tee /etc/X11/xorg.conf.d/20-amdgpu.conf
 #modprobe & cron
 modprobed-db && modprobed-db store 
 crontab -e 0 */1* * *   /usr/bin/modprobed-db store &> /dev/null
+
+#Papirus custom folder color
+papirus-folders -C bluegrey --theme Papirus-Dark
 
 
 

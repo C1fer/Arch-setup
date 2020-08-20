@@ -119,10 +119,10 @@ Server = https://repo.kitsuna.net/x86_64" | sudo tee /etc/pacman.conf >&-
 
 #Software installation
 #Essential
-sudo pacman -Syu --noconfirm pacman-contrib yay zsh-theme-powerlevel10k-git p7zip unrar git base-devel ninja cmake sdl2 qt5 python2 python-pip boost catch2 fmt libzip lz4 mbedtls nlohmann-json openssl opus zlib ccache zstd
-echo 'source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme' '\nexport PATH="/usr/lib/ccache/bin/:$PATH"'>>! ~/.zshrc
-yay -S --noconfirm conan ttf-meslo-nerd-font-powerlevel10k llvm-git lib32-llvm-git clang-git meson 
-. ./mesa.sh
+sudo pacman -Syyu --noconfirm pacman-contrib yay zsh-theme-powerlevel10k-git p7zip unrar git base-devel ninja cmake sdl2 qt5 python2 python-pip boost catch2 fmt libzip lz4 mbedtls nlohmann-json openssl opus zlib ccache zstd && sudo pacman -Rdd --noconfirm llvm-libs
+echo 'source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme' |tee -a ~/.zshrc && echo 'export PATH="/usr/lib/ccache/bin/:$PATH"' | tee -a ~/.zshrc
+yay -S --noconfirm conan ttf-meslo-nerd-font-powerlevel10k llvm-git llvm-libs-git lib32-llvm-git clang-git meson 
+. yes "y" | ./mesa.sh
 #Non-essential
 yay -S --noconfirm plasma-meta adapta-kde-git adapta-gtk-theme mkvtoolnix-gui spek-git spectacle-git brave qmplay2-git qbittorrent mangohud goverlay-git puddletag-qt5-git wine-tkg-staging-fsync-vkd3d-opt-git winetricks-git psensor corectrl-git ark gwenview krename steam gnome-disk-utility nano qdirstat-git grub-customizer systemd-swap schedtool kde-servicemenus-rootactions cronie modprobe-db ffmpegthumbs  neofetch papirus-folders-git 
 sudo pacman -Rdd vim chromium discover oxygen plasma-thunderbolt
@@ -166,9 +166,4 @@ crontab -e 0 */1* * *   /usr/bin/modprobed-db store &> /dev/null
 
 #Papirus custom folder color
 papirus-folders -C bluegrey --theme Papirus-Dark
-
-
-
-
-
 

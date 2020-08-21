@@ -45,6 +45,7 @@ sudo rm -rf /var/cache/pacman/pkg ~/.cache/yay
 enable_zram
 fstab
 amdgpu_conf
+ds4_touchpad 
 enable_bt
 
 #modprobe & cron

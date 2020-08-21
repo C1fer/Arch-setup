@@ -130,10 +130,14 @@ sudo systemctl enable zram
 
 #fstab
 fstab () {
-echo "UUID=D2F27AE4F27ACC6B /mnt/Disco\040Local\040D ntfs-3g defaults,x-gvfs-show 0 0
-UUID=10EC8ED5EC8EB48E /mnt/Disco\040Local\040E ntfs-3g defaults,x-gvfs-show 0 0
+if grep -q "UUID=D2F27AE4F27ACC6B" /etc/fstab; then
+ :
+else  
+ echo "UUID=D2F27AE4F27ACC6B /mnt/Disco\040Local\040D ntfs-3g defaults,x-gvfs-show 0 0
+UUID=10EC8ED5EC8EB48E /mnt/Disco\040Local\040E ntfs-3g defaults,x-gvfs-show 0 0 
 UUID=5864C15F64C1408C /mnt/Disco\040Local\040F ntfs-3g defaults,x-gvfs-show 0 0
 UUID=70720F9C720F65E6 /mnt/Rusbel ntfs-3g defaults,x-gvfs-show 0 0" | sudo tee -a /etc/fstab >&-
+fi 
 }
 
 #Mirror list
@@ -168,4 +172,3 @@ echo 'Section "Device"
      Driver "amdgpu"
 EndSection' | sudo tee /etc/X11/xorg.conf.d/20-amdgpu.conf
 }
-

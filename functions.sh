@@ -165,12 +165,12 @@ Server = http://mirror.dc02.hackingand.coffee/arch/\$repo/os/\$arch" | sudo tee 
 #Xorg config
 amdgpu_conf () {
 sudo touch /etc/X11/xorg.conf.d/20-amdgpu.conf
-echo 'Section \"Device"\
+echo 'Section "Device"
      Identifier "AMD"
-     Option \"TearFree"\ \"true"\
-     Option \"DRI"\ \"3"\
-     Option \"VariableRefresh"\ \"true"\
-     Driver \"amdgpu"\
+     Option "TearFree" "\true"
+     Option "DRI" "\3"
+     Option "VariableRefresh" "\true"
+     Driver "amdgpu"
 EndSection' | sudo tee /etc/X11/xorg.conf.d/20-amdgpu.conf
 }
 

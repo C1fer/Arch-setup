@@ -1,5 +1,5 @@
 #!/bin/sh
-git clone --quiet https://github.com/C1fer/Arch-setup.git >&- && cd Arch-setup
+git clone https://github.com/C1fer/Arch-setup.git  && cd Arch-setup
 source ./functions.sh
 pacman_conf 
 mirrors

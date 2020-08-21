@@ -34,7 +34,7 @@ echo 'source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme' |tee -a
 yay -S --noconfirm conan noto-fonts-cjk ttf-opensans ttf-meslo-nerd-font-powerlevel10k llvm-git llvm-libs-git lib32-llvm-git clang-git meson 
 
 #Mesa
-yes "y" | source ./mesa.sh
+source ./mesa.sh
 
 #Others
 yay -S --noconfirm plasma-meta adapta-kde-git adapta-gtk-theme mkvtoolnix-gui spek-git spectacle-git brave qbittorrent mangohud goverlay-git puddletag-qt5-git wine-tkg-staging-fsync-vkd3d-opt-git winetricks-git psensor corectrl-git ark gwenview krename steam gnome-disk-utility nano qdirstat-git grub-customizer htop gedit galculator gparted audacious systemd-swap schedtool kde-servicemenus-rootactions cronie modprobed-db ffmpegthumbs  neofetch papirus-folders-git 

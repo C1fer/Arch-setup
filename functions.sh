@@ -175,6 +175,11 @@ Section "Device"
 EndSection' | sudo tee /etc/X11/xorg.conf.d/20-amdgpu.conf
 }
 
+ds4_touchpad () {
+sudo touch /etc/udev/rules.d/51-disable-DS3-and-DS4-motion-controls.rules
+echo 'SUBSYSTEM=="input", ATTRS{name}=="*Controller Touchpad", RUN+="/bin/rm %E{DEVNAME}", ENV{ID_INPUT_JOYSTICK}=""' | sudo tee /etc/udev/rules.d/51-disable-DS3-and-DS4-motion-controls.rules >&-
+}
+
 enable_bt () {
 sudo systemctl enable bluetooth.service
 }

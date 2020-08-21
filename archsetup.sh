@@ -12,6 +12,7 @@ sudo pacman-key --populate archlinux
 sudo pacman-key --keyserver hkp://ipv4.pool.sks-keyservers.net:11371 -r 3056513887B78AEB 8A9E14A07010F7E3
 sudo pacman-key --lsign-key 3056513887B78AEB
 sudo pacman-key --lsign-key 8A9E14A07010F7E3
+sudo pacman-key --refresh-keys
 
 #Parallel Compilation
 if grep -q "MAKEFLAGS=" /etc/makepkg.conf; then

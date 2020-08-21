@@ -137,7 +137,7 @@ else
 UUID=D2F27AE4F27ACC6B /mnt/Disco\040Local\040D auto nosuid,nodev,nofail,x-gvfs-show 0 0
 UUID=10EC8ED5EC8EB48E /mnt/Disco\040Local\040E auto nosuid,nodev,nofail,x-gvfs-show 0 0
 UUID=5864C15F64C1408C /mnt/Disco\040Local\040F auto nosuid,nodev,nofail,x-gvfs-show 0 0
-UUID=70720F9C720F65E6 /mnt/Rusbel auto nosuid,nodev,nofail,x-gvfs-show 0 0 | sudo tee -a /etc/fstab >&-
+UUID=70720F9C720F65E6 /mnt/Rusbel auto nosuid,nodev,nofail,x-gvfs-show 0 0" | sudo tee -a /etc/fstab >&-
 fi 
 }
 
@@ -165,13 +165,14 @@ Server = http://mirror.dc02.hackingand.coffee/arch/\$repo/os/\$arch" | sudo tee 
 #Xorg config
 amdgpu_conf () {
 sudo touch /etc/X11/xorg.conf.d/20-amdgpu.conf
-echo "Section "Device"
+echo '
+Section "Device"
      Identifier "AMD"
-     Option "TearFree" "\true"
-     Option "DRI" "\3"
-     Option "VariableRefresh" "\true"
+     Option "TearFree" "true"
+     Option "DRI" "3"
+     Option "VariableRefresh" "true"
      Driver "amdgpu"
-EndSection" | sudo tee /etc/X11/xorg.conf.d/20-amdgpu.conf
+EndSection' | sudo tee /etc/X11/xorg.conf.d/20-amdgpu.conf
 }
 
 enable_bt () {

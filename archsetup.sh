@@ -29,7 +29,7 @@ else
 fi
 
 #SOFTWARE
-sudo pacman -Syyu --noconfirm pacman-contrib yay zsh-theme-powerlevel10k-git p7zip unrar git base-devel ninja cmake sdl2 qt5 python2 python-pip boost catch2 fmt libzip lz4 mbedtls nlohmann-json openssl opus zlib ccache zstd ntfs-3g ufw gufw wget nano && sudo pacman -Rdd --noconfirm llvm-libs
+sudo pacman -Syyu --noconfirm pacman-contrib yay zsh-theme-powerlevel10k-git p7zip unrar git base-devel ninja cmake sdl2 qt5 python2 python-pip boost catch2 fmt libzip lz4 mbedtls nlohmann-json openssl opus zlib ccache zstd ntfs-3g ufw gufw wget nano  bluez bluez-utils && sudo pacman -Rdd --noconfirm llvm-libs
 echo 'source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme' |tee -a ~/.zshrc && echo 'export PATH="/usr/lib/ccache/bin/:$PATH"' | tee -a ~/.zshrc
 yay -S --noconfirm conan noto-fonts-cjk ttf-opensans ttf-meslo-nerd-font-powerlevel10k mesa-git lib32-mesa-git mesa-demos libva-utils vulkan-tools llvm-git llvm-libs-git lib32-llvm-git clang-git meson 
 
@@ -46,6 +46,7 @@ enable_zram
 fstab
 amdgpu_conf
 ds4_touchpad
+enable_bt
 
 #modprobe & cron
 modprobed-db && modprobed-db store 

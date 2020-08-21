@@ -133,7 +133,7 @@ yay -S --noconfirm conan noto-fonts-cjk ttf-opensans ttf-meslo-nerd-font-powerle
 #Mesa
 yes "y" | . ./mesa.sh
 #Others
-yay -S --noconfirm plasma-meta adapta-kde-git adapta-gtk-theme mkvtoolnix-gui spek-git spectacle-git brave qmplay2-git qbittorrent mangohud goverlay-git puddletag-qt5-git wine-tkg-staging-fsync-vkd3d-opt-git winetricks-git psensor corectrl-git ark gwenview krename steam gnome-disk-utility nano qdirstat-git grub-customizer htop gedit galculator gparted audacious systemd-swap schedtool kde-servicemenus-rootactions cronie modprobe-db ffmpegthumbs  neofetch papirus-folders-git 
+yay -S --noconfirm plasma-meta adapta-kde-git adapta-gtk-theme mkvtoolnix-gui spek-git spectacle-git brave qmplay2-git qbittorrent mangohud goverlay-git puddletag-qt5-git wine-tkg-staging-fsync-vkd3d-opt-git winetricks-git psensor corectrl-git ark gwenview krename steam gnome-disk-utility nano qdirstat-git grub-customizer htop gedit galculator gparted audacious systemd-swap schedtool kde-servicemenus-rootactions cronie modprobed-db ffmpegthumbs  neofetch papirus-folders-git 
 #Cleaning
 sudo pacman -Rdd vim chromium discover oxygen plasma-thunderbolt
 yay -Sc --noconfirm && sudo pacman -Rns --noconfirm $(pacman -Qtdq)

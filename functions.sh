@@ -172,7 +172,7 @@ Section "Device"
      Option "DRI" "3"
      Option "VariableRefresh" "true"
      Driver "amdgpu"
-EndSection' | sudo tee /etc/X11/xorg.conf.d/20-amdgpu.conf
+EndSection' | sudo tee /etc/X11/xorg.conf.d/20-amdgpu.conf >&-
 }
 
 ds4_touchpad () {

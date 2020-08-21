@@ -154,7 +154,7 @@ WantedBy=multi-user.target' | sudo tee /etc/systemd/system/zram.service >&-
 sudo systemctl enable zram
 
 #fstab
-echo "UUID=B0D64370D643363E /mnt/Disco Local C ntfs-3g defaults,x-gvfs-show 0 0
+echo "
 UUID=D2F27AE4F27ACC6B /mnt/Disco\040Local\040D ntfs-3g defaults,x-gvfs-show 0 0
 UUID=10EC8ED5EC8EB48E /mnt/Disco\040Local\040E ntfs-3g defaults,x-gvfs-show 0 0
 UUID=5864C15F64C1408C /mnt/Disco\040Local\040F ntfs-3g defaults,x-gvfs-show 0 0

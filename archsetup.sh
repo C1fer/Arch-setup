@@ -18,7 +18,6 @@ sudo pacman-key --populate archlinux
 sudo pacman-key --keyserver hkp://ipv4.pool.sks-keyservers.net:11371 -r 3056513887B78AEB 8A9E14A07010F7E3
 sudo pacman-key --lsign-key 3056513887B78AEB
 sudo pacman-key --lsign-key 8A9E14A07010F7E3
-sudo pacman-key --refresh-keys
 
 #Parallel Compilation
 if grep -q "MAKEFLAGS=" /etc/makepkg.conf; then
@@ -29,7 +28,8 @@ else
 fi
 
 #SOFTWARE
-sudo pacman -Syyu --noconfirm pacman-contrib yay zsh-theme-powerlevel10k-git p7zip unrar git base-devel ninja cmake sdl2 qt5 python2 python-pip boost catch2 fmt libzip lz4 mbedtls nlohmann-json openssl opus zlib ccache zstd ntfs-3g ufw gufw wget nano  bluez bluez-utils && sudo pacman -Rdd llvm-libs mesa
+sudo pacman -Syyu --noconfirm pacman-contrib yay zsh-theme-powerlevel10k-git p7zip unrar git base-devel ninja cmake sdl2 qt5 python2 python-pip boost catch2 fmt libzip lz4 mbedtls nlohmann-json openssl opus zlib ccache zstd ntfs-3g ufw gufw wget nano  bluez bluez-utils
+sudo pacman -Rdd --noconfirm llvm-libs mesa
 echo 'source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme' |tee -a ~/.zshrc && echo 'export PATH="/usr/lib/ccache/bin/:$PATH"' | tee -a ~/.zshrc
 yay -S --noconfirm conan noto-fonts-cjk ttf-opensans ttf-meslo-nerd-font-powerlevel10k gstreamer gst-libav gst-plugins-bad gst-plugins-base gst-plugins-good gst-plugins-ugly gst-plugin-libde265 mesa-git lib32-mesa-git mesa-demos libva-utils vulkan-tools llvm-git llvm-libs-git lib32-llvm-git clang-git meson 
 

@@ -1,12 +1,12 @@
 #!/bin/sh
 #Clone repo
 sudo pacman -S --noconfirm git
-git clone https://github.com/C1fer/Arch-setup.git  && cd Arch-setup
 if  [ -d "~/Arch-setup" ]; then
  rm -rf ~/Arch-setup
 else
  :
 fi
+git clone https://github.com/C1fer/Arch-setup.git  && cd Arch-setup
 source ./functions.sh
 pacman_conf 
 mirrors

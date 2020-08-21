@@ -177,8 +177,3 @@ ds4_touchpad () {
 sudo touch /etc/udev/rules.d/51-disable-DS3-and-DS4-motion-controls.rules
 echo 'SUBSYSTEM=="input", ATTRS{name}=="*Controller Touchpad", RUN+="/bin/rm %E{DEVNAME}", ENV{ID_INPUT_JOYSTICK}=""' | sudo tee /etc/udev/rules.d/51-disable-DS3-and-DS4-motion-controls.rules >&-
 {
-
-
-
-
-

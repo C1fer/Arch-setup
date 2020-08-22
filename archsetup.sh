@@ -1,8 +1,8 @@
 #!/bin/sh
 #Clone repo
 sudo pacman -S --noconfirm git
-if  [ -d "~/Arch-setup" ]; then
- rm -rf \~/Arch-setup
+if  [ -d "/home/rusbel/Arch-setup" ]; then
+ rm -rf /home/rusbel/Arch-setup
 else
  :
 fi
@@ -35,7 +35,7 @@ sudo pacman -Rdd --noconfirm llvm-libs mesa
 echo 'source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme' |tee -a ~/.zshrc && echo 'export PATH="/usr/lib/ccache/bin/:$PATH"' | tee -a ~/.zshrc
 yay -S --noconfirm conan noto-fonts-cjk ttf-opensans ttf-meslo-nerd-font-powerlevel10k gstreamer gst-libav gst-plugins-bad gst-plugins-base gst-plugins-good gst-plugins-ugly gst-plugin-libde265 mesa-git lib32-mesa-git mesa-demos libva-utils vulkan-tools llvm-git llvm-libs-git lib32-llvm-git clang-git meson 
 
-if grep -q "(invalid or corrupted package (PGP signature))" \~/debug.txt; then
+if grep -q "(invalid or corrupted package (PGP signature))" /home/rusbel/debug; then
  echo "script failed. Exiting..."
  exit
 else  

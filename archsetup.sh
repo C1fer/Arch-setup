@@ -1,11 +1,11 @@
 #!/bin/sh
 #Clone repo
-sudo pacman -S --noconfirm git
-if  [ -d "/home/rusbel/Arch-setup" ]; then
+if [ -d "/home/rusbel/Arch-setup" ] ; then
  rm -rf /home/rusbel/Arch-setup
 else
  :
 fi
+sudo pacman -S --noconfirm git
 git clone https://github.com/C1fer/Arch-setup.git  && cd Arch-setup
 source ./functions.sh
 pacman_conf_signon

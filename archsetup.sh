@@ -13,7 +13,7 @@ mirrors
 #Keys setup
 sudo rm -rf /etc/pacman.d/gnupg/gpg.conf
 sudo pacman-key --init
-echo keyserver hkp://ipv4.pool.sks-keyservers.net:11371 | sudo tee -a /etc/pacman.d/gnupg/gpg.conf
+#echo keyserver hkp://ipv4.pool.sks-keyservers.net:11371 | sudo tee -a /etc/pacman.d/gnupg/gpg.conf
 sudo pacman-key --populate archlinux
 sudo pacman-key --keyserver hkp://ipv4.pool.sks-keyservers.net:11371 -r 3056513887B78AEB 8A9E14A07010F7E3
 sudo pacman-key --lsign-key 3056513887B78AEB

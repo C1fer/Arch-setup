@@ -8,12 +8,12 @@ else
 fi
 git clone https://github.com/C1fer/Arch-setup.git  && cd Arch-setup
 source ./functions.sh
-pacman_conf 
+pacman_conf_signoff
 mirrors
 #Keys setup
 sudo rm -rf /etc/pacman.d/gnupg/gpg.conf
 sudo pacman-key --init
-#echo keyserver hkp://ipv4.pool.sks-keyservers.net:11371 | sudo tee -a /etc/pacman.d/gnupg/gpg.conf
+echo keyserver hkp://ipv4.pool.sks-keyservers.net:11371 | sudo tee -a /etc/pacman.d/gnupg/gpg.conf
 sudo pacman-key --populate archlinux
 sudo pacman-key --keyserver hkp://ipv4.pool.sks-keyservers.net:11371 -r 3056513887B78AEB 8A9E14A07010F7E3
 sudo pacman-key --lsign-key 3056513887B78AEB
@@ -40,6 +40,7 @@ yay -S --noconfirm plasma-meta adapta-kde-git adapta-gtk-theme mkvtoolnix-gui pl
 sudo pacman -Rdd --noconfirm vim chromium discover oxygen plasma-thunderbolt plasma-browser-integration
 yay -Sc --noconfirm && sudo pacman -Rns --noconfirm $(pacman -Qtdq)
 sudo rm -rf /var/cache/pacman/pkg ~/.cache/yay
+pacman_conf_signon
 
 #Functions 
 enable_zram

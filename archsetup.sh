@@ -55,6 +55,7 @@ pacman_conf_signon
 enable_zram
 fstab
 amdgpu_conf
+amdgpu_oc
 ds4_touchpad 
 enable_bt
 

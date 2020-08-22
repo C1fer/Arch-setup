@@ -8,7 +8,7 @@ else
 fi
 git clone https://github.com/C1fer/Arch-setup.git  && cd Arch-setup
 source ./functions.sh
-pacman_conf_signoff
+pacman_conf_signon
 mirrors
 #Keys setup
 sudo rm -rf /etc/pacman.d/gnupg/gpg.conf
@@ -18,6 +18,7 @@ sudo pacman-key --populate archlinux
 sudo pacman-key --keyserver hkp://ipv4.pool.sks-keyservers.net:11371 -r 3056513887B78AEB 8A9E14A07010F7E3
 sudo pacman-key --lsign-key 3056513887B78AEB
 sudo pacman-key --lsign-key 8A9E14A07010F7E3
+sudo pacman-key --refresh-keys
 sudo pacman -Sc --noconfirm
 
 #Parallel Compilation

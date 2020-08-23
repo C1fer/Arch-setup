@@ -30,7 +30,7 @@ else
 fi
 
 #SOFTWARE
-sudo pacman -Syyu --noconfirm pacman-contrib yay zsh-theme-powerlevel10k-git p7zip unrar git base-devel ninja cmake sdl2 qt5 python2 python-pip boost catch2 fmt libzip lz4 mbedtls nlohmann-json openssl opus zlib ccache zstd ntfs-3g ufw gufw wget nano  bluez bluez-utils
+sudo pacman -Syyu --noconfirm pacman-contrib yay zsh-theme-powerlevel10k-git p7zip unrar  fuseiso git base-devel ninja cmake sdl2 qt5 python2 python-pip boost catch2 fmt libzip lz4 mbedtls nlohmann-json openssl opus zlib ccache zstd ntfs-3g ufw gufw wget nano  bluez bluez-utils
 sudo pacman -Rdd --noconfirm llvm-libs mesa
 echo 'source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 export PATH="/usr/lib/ccache/bin/:$PATH"

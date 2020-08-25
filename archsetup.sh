@@ -8,7 +8,7 @@ fi
 sudo pacman -S --noconfirm git
 git clone https://github.com/C1fer/Arch-setup.git  && cd Arch-setup
 source ./functions.sh
-pacman_conf_signon
+pacman_conf
 mirrors
 #Keys setup
 sudo rm -rf /etc/pacman.d/gnupg/gpg.conf

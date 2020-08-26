@@ -226,7 +226,7 @@ CheckSpace
 #VerbosePkgLists
 # By default, pacman accepts packages signed by keys that its local keyring
 # trusts (see pacman-key and its man page), as well as unsigned packages.
-SigLevel    = Required DatabaseOptional
+SigLevel    = Never
 LocalFileSigLevel = Optional
 #RemoteFileSigLevel = Required
 # NOTE: You must run \`pacman-key --init\` before first using pacman; the local

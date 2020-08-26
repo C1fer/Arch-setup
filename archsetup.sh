@@ -39,7 +39,7 @@ export EDITOR="/usr/bin/nano"' | tee -a ~/.zshrc
 yay -S --noconfirm conan aria2 noto-fonts-cjk ttf-opensans ttf-meslo-nerd-font-powerlevel10k gstreamer gst-libav gst-plugins-bad gst-plugins-base gst-plugins-good gst-plugins-ugly gst-plugin-libde265 mesa-demos libva-utils vulkan-tools llvm-git llvm-libs-git lib32-llvm-git clang-git meson 
 yay -S --noconfirm mesa-git lib32-mesa-git 
 #Others
-yay -S --noconfirm plasma-meta adapta-kde-git adapta-gtk-theme mkvtoolnix-gui plasma5-applets-eventcalendar spek-git spectacle brave qbittorrent mangohud goverlay-git puddletag-qt5-git wine-tkg-staging-fsync-vkd3d-opt-git winetricks-git psensor corectrl-git ark gwenview krename steam gnome-disk-utility nano qdirstat-git grub-customizer htop gedit galculator gparted audacious systemd-swap schedtool kde-servicemenus-rootactions cronie modprobed-db qmplay2-git ffmpegthumbs mkv-extractor-qt neofetch papirus-folders-git 
+yay -S --noconfirm plasma-meta adapta-kde-git adapta-gtk-theme mkvtoolnix-gui plasma5-applets-eventcalendar spek-git spectacle brave qbittorrent mangohud goverlay-git puddletag-qt5-git wine-tkg-staging-fsync-vkd3d-git winetricks-git psensor corectrl-git ark gwenview krename steam gnome-disk-utility nano qdirstat-git grub-customizer htop gedit galculator gparted audacious systemd-swap schedtool kde-servicemenus-rootactions cronie modprobed-db qmplay2-git ffmpegthumbs mkv-extractor-qt neofetch papirus-folders-git lutris-git
 
 #Cleaning
 sudo pacman -Rdd --noconfirm vim chromium discover oxygen plasma-thunderbolt plasma-browser-integration
@@ -55,10 +55,6 @@ amdgpu_conf
 amdgpu_oc
 ds4_touchpad 
 enable_bt
-
-#modprobe & cron
-modprobed-db && modprobed-db store 
-#crontab -e 0 */1* * *   /usr/bin/modprobed-db store &> /dev/null
 
 #Papirus custom folder color
 papirus-folders -C bluegrey --theme Papirus-Dark

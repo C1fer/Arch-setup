@@ -8,7 +8,7 @@ fi
 sudo pacman -S --noconfirm git
 git clone https://github.com/C1fer/Arch-setup.git  && cd Arch-setup
 source ./functions.sh
-pacman_conf
+pacman_conf_signoff
 mirrors
 #Keys setup
 sudo rm -rf /etc/pacman.d/gnupg/gpg.conf
@@ -46,6 +46,7 @@ sudo pacman -Rdd --noconfirm vim chromium discover oxygen plasma-thunderbolt pla
 yay -Sc --noconfirm && sudo pacman -Rns --noconfirm $(pacman -Qtdq)
 sudo rm -rf /var/cache/pacman/pkg ~/.cache/yay
 #pacman_conf_signon
+pacman_conf
 
 #Functions 
 enable_zram

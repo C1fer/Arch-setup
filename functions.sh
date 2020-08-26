@@ -187,6 +187,7 @@ if grep -q "GRUB_CMDLINE_LINUX_DEFAULT=" /etc/default/grub; then
 sudo sed -i  's/GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3"/GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 amdgpu.ppfeaturemask=0xffffffff"/' "/etc/default/grub"
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 else 
+echo "failed"
 :
 fi
 }

@@ -197,6 +197,7 @@ echo  "#
 # /etc/pacman.conf
 #
 # See the pacman.conf(5) manpage for option and repository directives
+
 #
 # GENERAL OPTIONS
 #
@@ -214,25 +215,31 @@ HoldPkg     = pacman glibc
 #XferCommand = /usr/bin/wget --passive-ftp -c -O %o %u
 #CleanMethod = KeepInstalled
 Architecture = auto
+
 # Pacman won't upgrade packages listed in IgnorePkg and members of IgnoreGroup
 #IgnorePkg   =
 #IgnoreGroup =
+
 #NoUpgrade   =
 #NoExtract   =
+
 # Misc options
 #UseSyslog
 Color
 #TotalDownload
 CheckSpace
 #VerbosePkgLists
+
 # By default, pacman accepts packages signed by keys that its local keyring
 # trusts (see pacman-key and its man page), as well as unsigned packages.
 SigLevel    = Never
-LocalFileSigLevel = Never
-#RemoteFileSigLevel = Never
+LocalFileSigLevel = Optional
+#RemoteFileSigLevel = Required
+
 # NOTE: You must run \`pacman-key --init\` before first using pacman; the local
 # keyring can then be populated with the keys of all official Arch Linux
 # packagers with \`pacman-key --populate archlinux\`.
+
 #
 # REPOSITORIES
 #   - can be defined here or included from another file
@@ -251,30 +258,41 @@ LocalFileSigLevel = Never
 # The header [repo-name] is crucial - it must be present and
 # uncommented to enable the repo.
 #
+
 # The testing repositories are disabled by default. To enable, uncomment the
 # repo name header and Include lines. You can add preferred servers immediately
 # after the header, and they will be used before the default mirrors.
+
 [testing]
 Include = /etc/pacman.d/mirrorlist
+
 [core]
 Include = /etc/pacman.d/mirrorlist
+
 [extra]
 Include = /etc/pacman.d/mirrorlist
+
 [community-testing]
 Include = /etc/pacman.d/mirrorlist
+
 [community]
 Include = /etc/pacman.d/mirrorlist
+
 # If you want to run 32 bit applications on your x86_64 system,
 # enable the multilib repositories as required here.
+
 [multilib-testing]
 Include = /etc/pacman.d/mirrorlist
+
 [multilib]
 Include = /etc/pacman.d/mirrorlist
+
 # An example of a custom package repository.  See the pacman manpage for
 # tips on creating your own repositories.
 #[custom]
 #SigLevel = Optional TrustAll
 #Server = file:///home/custompkgs
+
 [chaotic-aur]
 # Brazil
 Server =  https://lonewolf.pedrohlc.com/\$repo/x86_64
@@ -282,5 +300,7 @@ Server =  https://lonewolf.pedrohlc.com/\$repo/x86_64
 Server = http://chaotic.bangl.de/\$repo/x86_64
 # USA (Cloudflare proxy)
 Server = https://repo.kitsuna.net/x86_64" | sudo tee /etc/pacman.conf >&-
+
+}
 
 }

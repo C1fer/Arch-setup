@@ -131,15 +131,11 @@ sudo systemctl enable zram
 
 #fstab
 fstab () {
-if grep -q "UUID=D2F27AE4F27ACC6B" /etc/fstab; then
- :
-else  
- echo "UUID=B0D64370D643363E /mnt/Disco\040Local\040C  ntfs-3g  nodev,nofail,x-gvfs-show,uid=1000,guid=1000 0 0
+echo "UUID=B0D64370D643363E /mnt/Disco\040Local\040C  ntfs-3g  nodev,nofail,x-gvfs-show,uid=1000,guid=1000 0 0
 UUID=D2F27AE4F27ACC6B /mnt/Disco\040Local\040D  ntfs-3g  nodev,nofail,x-gvfs-show,uid=1000,guid=1000 0 0
 UUID=10EC8ED5EC8EB48E /mnt/Disco\040Local\040E  ntfs-3g  nosuid,nodev,nofail,x-gvfs-show 0 0
 UUID=5864C15F64C1408C /mnt/Disco\040Local\040F  ntfs-3g  nodev,nofail,x-gvfs-show,uid=1000,guid=1000 0 0
 UUID=70720F9C720F65E6 /mnt/Rusbel               ntfs-3g  nosuid,nodev,nofail,x-gvfs-show 0 0" | sudo tee -a /etc/fstab >&-
-fi 
 }
 
 #Mirror list
@@ -185,13 +181,8 @@ sudo systemctl enable bluetooth.service
 
 #GPU overclock
 amdgpu_oc () {
-if grep -q "GRUB_CMDLINE_LINUX_DEFAULT=" /etc/default/grub; then
-sudo sed -i  's/GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3"/GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 amdgpu.ppfeaturemask=0xffffffff"/' "/etc/default/grub"
+sudo sed -i  's/GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3"/GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 amdgpu.ppfeaturemask=0xffffffff nowatchdog"/' "/etc/default/grub"
 sudo grub-mkconfig -o /boot/grub/grub.cfg
-else 
-echo "failed"
-:
-fi
 }
 
 pacman_conf_signoff () {
@@ -304,7 +295,5 @@ Server = http://chaotic.bangl.de/\$repo/\$arch
 Server = https://repo.kitsuna.net/\$arch
 # Netherlands
 Server = https://chaotic.tn.dedyn.io/\$arch" | sudo tee /etc/pacman.conf >&-
-
-}
 
 }

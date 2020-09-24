@@ -32,7 +32,7 @@ fi
 
 #SOFTWARE
 sudo pacman -Syyu --noconfirm pacman-contrib yay zsh-theme-powerlevel10k-git p7zip unrar  fuseiso git base-devel ninja cmake sdl2 qt5 python2 python-pip boost catch2 fmt libzip lz4 mbedtls nlohmann-json openssl opus zlib ccache zstd ntfs-3g ufw gufw wget nano  bluez bluez-utils
-sudo pacman -Rdd --noconfirm llvm-libs mesa 
+sudo pacman -Rdd --noconfirm llvm-libs mesa
 echo 'source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 export PATH="/usr/lib/ccache/bin/:$PATH"
 export EDITOR="/usr/bin/nano"' | tee -a ~/.zshrc
@@ -40,7 +40,7 @@ export EDITOR="/usr/bin/nano"' | tee -a ~/.zshrc
 yay -S --noconfirm conan aria2 noto-fonts-cjk ttf-opensans ttf-meslo-nerd-font-powerlevel10k gstreamer gst-libav gst-plugins-bad gst-plugins-base gst-plugins-good gst-plugins-ugly mesa-demos libva-utils vulkan-tools llvm-git llvm-libs-git lib32-llvm-git clang-git meson 
 yay -S --noconfirm mesa-git lib32-mesa-git vulkan-radeon-git lib32-vulkan-radeon-git linux-tkg-pds-zen linux-tkg-pds-zen-headers
 #Others
-yay -S --noconfirm plasma-meta arc-kde-git arc-gtk-theme mkvtoolnix-gui plasma5-applets-eventcalendar spek-git spectacle brave qbittorrent aur/mangohud goverlay-git puddletag-qt5-git wine-tkg-staging-fsync-vkd3d-git winetricks-git psensor corectrl-git ark gwenview krename steam gnome-disk-utility nano qdirstat-git grub-customizer htop gedit bc gparted audacious systemd-swap schedtool kde-servicemenus-rootactions qmplay2-git ffmpegthumbs mkv-extractor-qt neofetch papirus-folders-git jdownloader2 ds4drv-cemuhook-git
+yay -S --noconfirm plasma-meta arc-kde-git arc-gtk-theme mkvtoolnix-gui plasma5-applets-eventcalendar spek-git spectacle brave qbittorrent aur/mangohud goverlay-git puddletag-git wine-tkg-staging-fsync-vkd3d-git winetricks-git psensor corectrl-git ark gwenview krename steam gnome-disk-utility nano qdirstat-git grub-customizer htop gedit bc gparted audacious systemd-swap schedtool kde-servicemenus-rootactions qmplay2-git ffmpegthumbs mkv-extractor-qt neofetch papirus-folders-git jdownloader2 ds4drv-cemuhook-git
 
 #Cleaning
 sudo pacman -Rdd --noconfirm vim chromium discover oxygen plasma-thunderbolt plasma-browser-integration

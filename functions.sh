@@ -102,13 +102,14 @@ Include = /etc/pacman.d/mirrorlist
 
 [chaotic-aur]
 # Brazil
-Server = http://lonewolf-builder.duckdns.org/\$repo/\$arch
-# Germany
-Server = http://chaotic.bangl.de/\$repo/\$arch
-# USA (Cloudflare cached)
+Server = https://lonewolf.pedrohlc.com/\$repo/\$arch
+# USA
+Server = https://builds.garudalinux.org/repos/\$repo/\$arch
 Server = https://repo.kitsuna.net/\$arch
 # Netherlands
-Server = https://chaotic.tn.dedyn.io/\$arch" | sudo tee /etc/pacman.conf >&-
+Server = https://chaotic.tn.dedyn.io/\$arch
+# Germany
+Server = http://chaotic.bangl.de/\$repo/\$arch" | sudo tee /etc/pacman.conf >&-
 
 }
 
@@ -288,12 +289,13 @@ Include = /etc/pacman.d/mirrorlist
 
 [chaotic-aur]
 # Brazil
-Server = http://lonewolf-builder.duckdns.org/\$repo/\$arch
-# Germany
-Server = http://chaotic.bangl.de/\$repo/\$arch
-# USA (Cloudflare cached)
+Server = https://lonewolf.pedrohlc.com/\$repo/\$arch
+# USA
+Server = https://builds.garudalinux.org/repos/\$repo/\$arch
 Server = https://repo.kitsuna.net/\$arch
 # Netherlands
-Server = https://chaotic.tn.dedyn.io/\$arch" | sudo tee /etc/pacman.conf >&-
+Server = https://chaotic.tn.dedyn.io/\$arch
+# Germany
+Server = http://chaotic.bangl.de/\$repo/\$arch"  | sudo tee /etc/pacman.conf >&-
 
 }

@@ -45,7 +45,7 @@ yay -S --noconfirm plasma-meta arc-kde-git arc-gtk-theme mkvtoolnix-gui plasma5-
 #Cleaning
 sudo pacman -Rdd --noconfirm vim chromium discover oxygen plasma-thunderbolt plasma-browser-integration
 yay -Sc --noconfirm && sudo pacman -Rns --noconfirm $(pacman -Qtdq)
-sudo rm -rf /var/cache/pacman/pkg ~/.cache/yay
+#sudo rm -rf /var/cache/pacman/pkg ~/.cache/yay
 #pacman_conf_signon
 pacman_conf
 

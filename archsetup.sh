@@ -8,6 +8,7 @@ fi
 sudo pacman -S --noconfirm git
 git clone https://github.com/C1fer/Arch-setup.git  && cd Arch-setup
 source ./functions.sh
+sudo cpupower frequency-set -g performance
 pacman_conf_signoff
 mirrors
 #Keys setup

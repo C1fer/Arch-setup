@@ -24,8 +24,7 @@ HoldPkg     = pacman glibc
 Architecture = auto
 
 # Pacman won't upgrade packages listed in IgnorePkg and members of IgnoreGroup
-IgnorePkg   =  libtorrent-rasterbar
- 
+IgnorePkg   = 
 #IgnoreGroup =
 
 #NoUpgrade   =
@@ -103,13 +102,14 @@ Include = /etc/pacman.d/mirrorlist
 
 [chaotic-aur]
 # Brazil
-Server = http://lonewolf-builder.duckdns.org/\$repo/\$arch
-# Germany
-Server = http://chaotic.bangl.de/\$repo/\$arch
-# USA (Cloudflare cached)
+Server = https://lonewolf.pedrohlc.com/\$repo/\$arch
+# USA
+Server = https://builds.garudalinux.org/repos/\$repo/\$arch
 Server = https://repo.kitsuna.net/\$arch
 # Netherlands
-Server = https://chaotic.tn.dedyn.io/\$arch" | sudo tee /etc/pacman.conf >&-
+Server = https://chaotic.tn.dedyn.io/\$arch
+# Germany
+Server = http://chaotic.bangl.de/\$repo/\$arch" | sudo tee /etc/pacman.conf >&-
 
 sudo pacman -Syyu --noconfirm
 
@@ -137,8 +137,7 @@ HoldPkg     = pacman glibc
 Architecture = auto
 
 # Pacman won't upgrade packages listed in IgnorePkg and members of IgnoreGroup
-IgnorePkg   =  llvm-git llvm-libs-git lib32-llvm-git lib32-llvm-libs-git mesa-git lib32-mesa-git lib32-vulkan-radeon-git  vulkan-radeon-git libtorrent-rasterbar
- 
+IgnorePkg   = llvm-git llvm-libs-git lib32-llvm-git lib32-llvm-libs-git mesa-git lib32-mesa-git lib32-vulkan-radeon-git  vulkan-radeon-git 
 #IgnoreGroup =
 
 #NoUpgrade   =
@@ -216,12 +215,13 @@ Include = /etc/pacman.d/mirrorlist
 
 [chaotic-aur]
 # Brazil
-Server = http://lonewolf-builder.duckdns.org/\$repo/\$arch
-# Germany
-Server = http://chaotic.bangl.de/\$repo/\$arch
-# USA (Cloudflare cached)
+Server = https://lonewolf.pedrohlc.com/\$repo/\$arch
+# USA
+Server = https://builds.garudalinux.org/repos/\$repo/\$arch
 Server = https://repo.kitsuna.net/\$arch
 # Netherlands
-Server = https://chaotic.tn.dedyn.io/\$arch" | sudo tee /etc/pacman.conf >&-
+Server = https://chaotic.tn.dedyn.io/\$arch
+# Germany
+Server = http://chaotic.bangl.de/\$repo/\$arch" | sudo tee /etc/pacman.conf >&-
 
 sudo pacman -Syyu --noconfirm

@@ -10,7 +10,7 @@ git clone https://github.com/C1fer/Arch-setup.git  && cd Arch-setup
 source ./functions.sh
 sudo cpupower frequency-set -g performance
 pacman_conf_signoff
-mirrors
+#mirrors
 #Keys setup
 sudo rm -rf /etc/pacman.d/gnupg/gpg.conf
 sudo pacman-key --init

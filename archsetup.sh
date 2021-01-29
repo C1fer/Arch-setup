@@ -37,11 +37,16 @@ export EDITOR="/usr/bin/nano"' | tee -a ~/.zshrc
 yay -S --noconfirm conan aria2 noto-fonts-cjk ttf-opensans ttf-meslo-nerd-font-powerlevel10k gstreamer gst-libav gst-plugins-bad gst-plugins-base gst-plugins-good gst-plugins-ugly mesa-demos libva-utils vulkan-tools llvm-git llvm-libs-git lib32-llvm-git clang-git meson 
 yay -S --noconfirm mesa-git lib32-mesa-git vulkan-radeon-git lib32-vulkan-radeon-git linux-tkg-pds-zen linux-tkg-pds-zen-headers
 #Others
-yay -S --noconfirm plasma-meta arc-kde-git arc-gtk-theme mkvtoolnix-gui plasma5-applets-eventcalendar spek-git spectacle brave qbittorrent aur/mangohud goverlay-git puddletag-git wine-tkg-staging-fsync-vkd3d-git winetricks-git psensor ark gwenview krename steam gnome-disk-utility nano qdirstat-git grub-customizer htop gedit bc gparted audacious systemd-swap schedtool kde-servicemenus-rootactions qmplay2-git ffmpegthumbs mkv-extractor-qt neofetch papirus-folders-git jdownloader2
+yay -S --noconfirm plasma-meta arc-kde-git arc-gtk-theme mkvtoolnix-gui plasma5-applets-eventcalendar spek-git spectacle brave qbittorrent mangohud goverlay-git puddletag-git psensor ark gwenview krename steam gnome-disk-utility nano qdirstat-git grub-customizer htop gedit bc gparted audacious systemd-swap kde-servicemenus-rootactions qmplay2-git ffmpegthumbs mkv-extractor-qt neofetch papirus-folders-git jdownloader2
 #Cleaning
 sudo pacman -Rdd --noconfirm vim chromium discover oxygen plasma-thunderbolt plasma-browser-integration
 yay -Sc --noconfirm && sudo pacman -Rns --noconfirm $(pacman -Qtdq)
-#sudo rm -rf /var/cache/pacman/pkg ~/.cache/yay
+if [ $? -ne 0 ]; then 
+ exit
+else
+ :
+fi
+sudo rm -rf /var/cache/pacman/pkg ~/.cache/yay
 #pacman_conf_signon
 pacman_conf
 
@@ -55,3 +60,5 @@ enable_bt
 
 #Papirus custom folder color
 papirus-folders -C bluegrey --theme Papirus-Dark
+
+

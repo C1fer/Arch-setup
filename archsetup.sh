@@ -16,8 +16,6 @@ sudo rm -rf /etc/pacman.d/gnupg/gpg.conf
 sudo pacman-key --init
 echo keyserver hkp://ipv4.pool.sks-keyservers.net:11371 | sudo tee -a /etc/pacman.d/gnupg/gpg.conf
 sudo pacman-key --populate archlinux
-sudo pacman-key --refresh-keys
-sudo pacman -Sc --noconfirm
 
 #Parallel Compilation
 if grep -q "MAKEFLAGS=" /etc/makepkg.conf; then

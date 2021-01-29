@@ -108,7 +108,7 @@ Include = /etc/pacman.d/mirrorlist
 
 # USA
 ## By: GarudaLinux and Fosshost
-Server = https://builds.garudalinux.org/repos/\$repo/$arch
+Server = https://builds.garudalinux.org/repos/\$repo/\$arch
 ## By: LordKitsuna
 Server = https://repo.kitsuna.net/\$arch
 
@@ -315,7 +315,7 @@ Include = /etc/pacman.d/mirrorlist
 
 # USA
 ## By: GarudaLinux and Fosshost
-Server = https://builds.garudalinux.org/repos/\$repo/$arch
+Server = https://builds.garudalinux.org/repos/\$repo/\$arch
 ## By: LordKitsuna
 Server = https://repo.kitsuna.net/\$arch
 

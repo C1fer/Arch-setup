@@ -128,7 +128,7 @@ Server = http://chaotic.bangl.de/\$repo/\$arch
 
 # Seoul, Korea
 ## By: Ryoichi <t.me/r377yx>
-Server = https://mirror.maakpain.kro.kr/garuda/\$repo/\$arch" | sudo tee /etc/pacman.d/mirrorlist >&-
+Server = https://mirror.maakpain.kro.kr/garuda/\$repo/\$arch" | sudo tee /etc/pacman.conf >&-
 
 }
 

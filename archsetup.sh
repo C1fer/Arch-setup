@@ -16,9 +16,6 @@ sudo rm -rf /etc/pacman.d/gnupg/gpg.conf
 sudo pacman-key --init
 echo keyserver hkp://ipv4.pool.sks-keyservers.net:11371 | sudo tee -a /etc/pacman.d/gnupg/gpg.conf
 sudo pacman-key --populate archlinux
-sudo pacman-key --keyserver hkp://ipv4.pool.sks-keyservers.net:11371 -r 3056513887B78AEB 8A9E14A07010F7E3
-sudo pacman-key --lsign-key 3056513887B78AEB
-sudo pacman-key --lsign-key 8A9E14A07010F7E3
 sudo pacman-key --refresh-keys
 sudo pacman -Sc --noconfirm
 
@@ -31,7 +28,7 @@ else
 fi
 
 #SOFTWARE
-sudo pacman -Syyu --noconfirm pacman-contrib yay zsh-theme-powerlevel10k-git p7zip unrar  fuseiso git base-devel ninja cmake sdl2 qt5 python2 python-pip boost catch2 fmt libzip lz4 mbedtls nlohmann-json openssl opus zlib ccache zstd ntfs-3g ufw gufw wget nano  bluez bluez-utils
+sudo pacman -Syyu --noconfirm pacman-contrib yay zsh-theme-powerlevel10k-git chaotic-keyring p7zip unrar  fuseiso git base-devel ninja cmake sdl2 qt5 python2 python-pip boost catch2 fmt libzip lz4 mbedtls nlohmann-json openssl opus zlib ccache zstd ntfs-3g ufw gufw wget nano  bluez bluez-utils
 sudo pacman -Rdd --noconfirm llvm-libs mesa
 echo 'source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 export PATH="/usr/lib/ccache/bin/:$PATH"

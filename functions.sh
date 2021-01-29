@@ -124,7 +124,7 @@ Server = https://repo.jkanetwork.com/repo/\$repo/\$arch
 ## By: Nico
 Server = https://chaotic.dr460nf1r3.me/repos/\$repo/\$arch
 ## By: ParanoidBangL
-Server = http://chaotic.bangl.de/$repo/$arch
+Server = http://chaotic.bangl.de/\$repo/\$arch
 
 # Seoul, Korea
 ## By: Ryoichi <t.me/r377yx>
@@ -140,7 +140,7 @@ Description=zRam block devices swapping
  
 [Service] 
 Type=oneshot 
-ExecStart=/usr/bin/bash -c "modprobe zram && echo lz4 > /sys/block/zram0/comp_algorithm && echo 8G > /sys/block/zram0/disksize && mkswap --label zram0 /dev/zram0 && swapon --priority 100 /dev/zram0" 
+ExecStart=/usr/bin/bash -c "modprobe zram && echo lz4 > /sys/block/zram0/comp_algorithm && echo 16G > /sys/block/zram0/disksize && mkswap --label zram0 /dev/zram0 && swapon --priority 100 /dev/zram0" 
 ExecStop=/usr/bin/bash -c "swapoff /dev/zram0 && rmmod zram" 
 RemainAfterExit=yes 
  
@@ -331,7 +331,7 @@ Server = https://repo.jkanetwork.com/repo/\$repo/\$arch
 ## By: Nico
 Server = https://chaotic.dr460nf1r3.me/repos/\$repo/\$arch
 ## By: ParanoidBangL
-Server = http://chaotic.bangl.de/$repo/$arch
+Server = http://chaotic.bangl.de/\$repo/\$arch
 
 # Seoul, Korea
 ## By: Ryoichi <t.me/r377yx>

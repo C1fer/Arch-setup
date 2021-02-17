@@ -5,10 +5,14 @@ if [ -d "/home/rusbel/Arch-setup" ] ; then
 else
  :
 fi
-sudo pacman -S --noconfirm git
+sudo pacman -S --noconfirm git reflector
+sudo reflector --latest 10 --sort rate --save /etc/pacman.d/mirrorlist
 git clone https://github.com/C1fer/Arch-setup.git  && cd Arch-setup
 source ./functions.sh
 sudo cpupower frequency-set -g performance
+sudo sed -i 's/MAKEFLAGS="-j2"/MAKEFLAGS="-j$(nproc)"/' "/etc/makepkg.conf"
+sudo sed -i 's/governor='performance'/governor='performance'/g' /etc/default/cpupower 
+
 #pacman_conf_signoff
 #mirrors
 #Set up keys
@@ -17,12 +21,6 @@ sudo cpupower frequency-set -g performance
 #echo keyserver hkp://ipv4.pool.sks-keyservers.net:11371 | sudo tee -a /etc/pacman.d/gnupg/gpg.conf
 #sudo pacman-key --populate archlinux
 
-#Parallel Compilation
-if grep -q "MAKEFLAGS=" /etc/makepkg.conf; then
- sudo sed -i 's/MAKEFLAGS="-j2"/MAKEFLAGS="-j$(nproc)"/' "/etc/makepkg.conf"
-else
- :
-fi
 
 #SOFTWARE
 sudo pacman -Syyu --noconfirm pacman-contrib yay zsh-theme-powerlevel10k-git chaotic-keyring chaotic-mirrorlist p7zip unrar  fuseiso git base-devel ninja cmake sdl2 qt5 python2 python-pip boost catch2 fmt libzip lz4 mbedtls nlohmann-json openssl opus zlib ccache zstd ntfs-3g ufw gufw wget nano  bluez bluez-utils

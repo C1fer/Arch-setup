@@ -45,7 +45,8 @@ sudo rm -rf /var/cache/pacman/pkg ~/.cache/yay
 #idk
 echo 'source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 export PATH="/usr/lib/ccache/bin/:$PATH"
-export EDITOR="/usr/bin/nano"' | tee -a ~/.zshrc
+export EDITOR="/usr/bin/nano"
+alias mesa=' yay -S llvm-git llvm-libs-git lib32-llvm-git lib32-llvm-libs-git mesa-git lib32-mesa-git lib32-vulkan-radeon-git  vulkan-radeon-git'' | tee -a ~/.zshrc
 papirus-folders -C bluegrey --theme Papirus-Dark
 
 #Functions 

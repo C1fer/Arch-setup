@@ -98,7 +98,7 @@ Include = /etc/pacman.d/mirrorlist
 # tips on creating your own repositories.
 #[custom]
 #SigLevel = Optional TrustAll
-#Server = file:///home/custompkgs | sudo tee /etc/pacman.conf >&-
+#Server = file:///home/custompkgs" | sudo tee /etc/pacman.conf >&-
 
 }
 
@@ -176,7 +176,6 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 }
 
 
-pacman_conf() {
 echo  "#
 # /etc/pacman.conf
 #
@@ -201,7 +200,7 @@ HoldPkg     = pacman glibc
 Architecture = auto
 
 # Pacman won't upgrade packages listed in IgnorePkg and members of IgnoreGroup
-IgnorePkg   = llvm-git llvm-libs-git lib32-llvm-git lib32-llvm-libs-git mesa-git lib32-mesa-git lib32-vulkan-radeon-git  vulkan-radeon-git 
+#IgnorePkg   =
 #IgnoreGroup =
 
 #NoUpgrade   =
@@ -216,7 +215,7 @@ CheckSpace
 
 # By default, pacman accepts packages signed by keys that its local keyring
 # trusts (see pacman-key and its man page), as well as unsigned packages.
-SigLevel    = Required DatabaseOptional
+SigLevel    = Never
 LocalFileSigLevel = Optional
 #RemoteFileSigLevel = Required
 
@@ -275,6 +274,5 @@ Include = /etc/pacman.d/mirrorlist
 # tips on creating your own repositories.
 #[custom]
 #SigLevel = Optional TrustAll
-#Server = file:///home/custompkgs 
-| sudo tee /etc/pacman.conf >&-
+#Server = file:///home/custompkgs" | sudo tee /etc/pacman.conf >&-
 }

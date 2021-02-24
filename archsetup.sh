@@ -23,7 +23,7 @@ pacman_conf_signoff
 
 
 #SOFTWARE
-sudo pacman -Syyu --noconfirm pacman-contrib yay zsh-theme-powerlevel10k-git chaotic-keyring chaotic-mirrorlist p7zip unrar  fuseiso git base-devel ninja cmake sdl2 qt5 python2 python-pip boost catch2 fmt libzip lz4 mbedtls nlohmann-json openssl opus zlib ccache zstd ntfs-3g ufw gufw wget nano  bluez bluez-utils
+yay -S --noconfirm pacman-contrib zsh-theme-powerlevel10k-git chaotic-keyring chaotic-mirrorlist p7zip unrar  fuseiso git base-devel ninja cmake sdl2 qt5 python2 python-pip boost catch2 fmt libzip lz4 mbedtls nlohmann-json openssl opus zlib ccache zstd ntfs-3g ufw gufw wget nano  bluez bluez-utils
 sudo pacman -Rdd --noconfirm llvm-libs mesa
 yay -S --noconfirm conan aria2 noto-fonts-cjk ttf-opensans ttf-meslo-nerd-font-powerlevel10k gstreamer mesa-demos libva-utils vulkan-tools llvm-git llvm-libs-git lib32-llvm-git clang-git meson mesa-git lib32-mesa-git vulkan-radeon-git lib32-vulkan-radeon-git linux-tkg-pds-zen linux-tkg-pds-zen-headers
 #Others

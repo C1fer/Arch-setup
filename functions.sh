@@ -33,9 +33,10 @@ Architecture = auto
 # Misc options
 #UseSyslog
 Color
-#TotalDownload
+TotalDownload
 CheckSpace
 #VerbosePkgLists
+ILoveCandy
 
 # By default, pacman accepts packages signed by keys that its local keyring
 # trusts (see pacman-key and its man page), as well as unsigned packages.
@@ -99,7 +100,6 @@ Include = /etc/pacman.d/mirrorlist
 #[custom]
 #SigLevel = Optional TrustAll
 #Server = file:///home/custompkgs" | sudo tee /etc/pacman.conf >&-
-
 }
 
 #zram

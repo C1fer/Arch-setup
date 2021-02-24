@@ -13,7 +13,7 @@ sudo cpupower frequency-set -g performance
 sudo sed -i 's/MAKEFLAGS="-j2"/MAKEFLAGS="-j$(nproc)"/' "/etc/makepkg.conf"
 sudo sed -i 's/governor='performance'/governor='performance'/g' /etc/default/cpupower 
 
-#pacman_conf_signoff
+pacman_conf_signoff
 #mirrors
 #Set up keys
 #sudo rm -rf /etc/pacman.d/gnupg/gpg.conf

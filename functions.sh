@@ -176,6 +176,7 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 }
 
 
+pacman_conf_sign1() {
 echo  "#
 # /etc/pacman.conf
 #

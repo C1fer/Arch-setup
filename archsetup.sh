@@ -28,7 +28,7 @@ yay -S --noconfirm pacman-contrib zsh-theme-powerlevel10k-git chaotic-keyring ch
 sudo pacman -Rdd --noconfirm llvm-libs mesa
 yay -S --noconfirm conan aria2 noto-fonts-cjk ttf-opensans ttf-meslo-nerd-font-powerlevel10k gstreamer mesa-demos libva-utils vulkan-tools llvm-git llvm-libs-git lib32-llvm-git clang-git meson mesa-git lib32-mesa-git vulkan-radeon-git lib32-vulkan-radeon-git linux-tkg-pds-zen linux-tkg-pds-zen-headers
 #Others
-yay -S --noconfirm plasma-meta arc-kde-git arc-gtk-theme plasma5-applets-eventcalendar spectacle brave-bin qbittorrent mangohud goverlay-git  psensor ark gwenview krename steam gnome-disk-utility nano qdirstat-git grub-customizer htop gedit bc gparted audacious systemd-swap kde-servicemenus-rootactions qmplay2-git ffmpegthumbs neofetch papirus-folders-git 
+yay -S --noconfirm plasma-meta arc-kde-git arc-gtk-theme plasma5-applets-eventcalendar spectacle qbittorrent mangohud goverlay-git  psensor ark gwenview krename steam gnome-disk-utility nano qdirstat-git grub-customizer htop gedit bc gparted audacious systemd-swap kde-servicemenus-rootactions qmplay2-git ffmpegthumbs neofetch papirus-folders-git 
 if [ $? -ne 0 ]; then 
  exit
 else

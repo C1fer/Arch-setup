@@ -5,7 +5,7 @@ if [ -d "/home/rusbel/Arch-setup" ] ; then
 else
  :
 fi
-sudo pacman -S --noconfirm git 
+sudo pacman -S --noconfirm --needed git base-devel
 #sudo reflector --latest 10 --sort rate --save /etc/pacman.d/mirrorlist
 git clone https://github.com/C1fer/Arch-setup.git  && cd Arch-setup
 source ./functions.sh
@@ -23,11 +23,12 @@ pacman_conf_signoff
 
 
 #SOFTWARE
+sudo pacman -S --noconfirm yay
 yay -S --noconfirm pacman-contrib zsh-theme-powerlevel10k-git chaotic-keyring chaotic-mirrorlist p7zip unrar  fuseiso git base-devel ninja cmake sdl2 qt5 python2 python-pip boost catch2 fmt libzip lz4 mbedtls nlohmann-json openssl opus zlib ccache zstd ntfs-3g ufw gufw wget nano  bluez bluez-utils
 sudo pacman -Rdd --noconfirm llvm-libs mesa
 yay -S --noconfirm conan aria2 noto-fonts-cjk ttf-opensans ttf-meslo-nerd-font-powerlevel10k gstreamer mesa-demos libva-utils vulkan-tools llvm-git llvm-libs-git lib32-llvm-git clang-git meson mesa-git lib32-mesa-git vulkan-radeon-git lib32-vulkan-radeon-git linux-tkg-pds-zen linux-tkg-pds-zen-headers
 #Others
-yay -S --noconfirm plasma-meta arc-kde-git arc-gtk-theme plasma5-applets-eventcalendar spectacle brave qbittorrent mangohud goverlay-git  psensor ark gwenview krename steam gnome-disk-utility nano qdirstat-git grub-customizer htop gedit bc gparted audacious systemd-swap kde-servicemenus-rootactions qmplay2-git ffmpegthumbs neofetch papirus-folders-git 
+yay -S --noconfirm plasma-meta arc-kde-git arc-gtk-theme plasma5-applets-eventcalendar spectacle brave-bin qbittorrent mangohud goverlay-git  psensor ark gwenview krename steam gnome-disk-utility nano qdirstat-git grub-customizer htop gedit bc gparted audacious systemd-swap kde-servicemenus-rootactions qmplay2-git ffmpegthumbs neofetch papirus-folders-git 
 if [ $? -ne 0 ]; then 
  exit
 else

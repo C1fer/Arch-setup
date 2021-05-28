@@ -153,7 +153,7 @@ amdgpu_conf () {
 sudo touch /etc/X11/xorg.conf.d/20-amdgpu.conf
 echo 'Section "Device"
      Identifier "AMD"
-     Option "TearFree" "true"
+     Option "TearFree" "off"
      Option "DRI" "3"
      Option "VariableRefresh" "true"
      Driver "amdgpu"

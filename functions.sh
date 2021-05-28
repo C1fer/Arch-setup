@@ -99,7 +99,9 @@ Include = /etc/pacman.d/mirrorlist
 # tips on creating your own repositories.
 #[custom]
 #SigLevel = Optional TrustAll
-#Server = file:///home/custompkgs" | sudo tee /etc/pacman.conf >&-
+#Server = file:///home/custompkgs 
+[chaotic-aur]
+Include = /etc/pacman.d/chaotic-mirrorlist" | sudo tee /etc/pacman.conf >&-
 }
 
 #zram
@@ -275,5 +277,7 @@ Include = /etc/pacman.d/mirrorlist
 # tips on creating your own repositories.
 #[custom]
 #SigLevel = Optional TrustAll
-#Server = file:///home/custompkgs" | sudo tee /etc/pacman.conf >&-
+#Server = file:///home/custompkgs
+[chaotic-aur]
+Include = /etc/pacman.d/chaotic-mirrorlist" | sudo tee /etc/pacman.conf >&-
 }

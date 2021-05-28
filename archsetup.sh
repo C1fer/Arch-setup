@@ -5,11 +5,12 @@ if [ -d "/home/rusbel/Arch-setup" ] ; then
 else
  :
 fi
-sudo pacman -S --noconfirm --needed git base-devel
+sudo pacman -Syyu
+sudo pacman -S --noconfirm git yay-bin
 #sudo reflector --latest 10 --sort rate --save /etc/pacman.d/mirrorlist
 git clone https://github.com/C1fer/Arch-setup.git  && cd Arch-setup
 source ./functions.sh
-#sudo cpupower frequency-set -g performance
+sudo cpupower frequency-set -g performance
 sudo sed -i 's/MAKEFLAGS="-j2"/MAKEFLAGS="-j$(nproc)"/' "/etc/makepkg.conf"
 #sudo sed -i 's/governor='performance'/governor='performance'/g' /etc/default/cpupower 
 
@@ -20,13 +21,15 @@ pacman_conf_signoff
 #sudo pacman-key --init
 #echo keyserver hkp://ipv4.pool.sks-keyservers.net:11371 | sudo tee -a /etc/pacman.d/gnupg/gpg.conf
 #sudo pacman-key --populate archlinux
+sudo pacman-key --recv-key 3056513887B78AEB
+sudo pacman-key --lsign-key 3056513887B78AEB
+sudo pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-'{keyring,mirrorlist}'.pkg.tar.zst'
 
 
 #SOFTWARE
-sudo pacman -S --noconfirm yay
-yay -S --noconfirm pacman-contrib zsh-theme-powerlevel10k-git chaotic-keyring chaotic-mirrorlist p7zip unrar  fuseiso git base-devel ninja cmake sdl2 qt5 python2 python-pip boost catch2 fmt libzip lz4 mbedtls nlohmann-json openssl opus zlib ccache zstd ntfs-3g ufw gufw wget nano  bluez bluez-utils
+yay -S --noconfirm pacman-contrib zsh-theme-powerlevel10k p7zip unrar  fuseiso base-devel ninja cmake sdl2 qt5 python2 python-pip boost catch2 fmt libzip lz4 mbedtls nlohmann-json openssl opus zlib ccache zstd ntfs-3g ufw gufw wget nano  bluez bluez-utils
 sudo pacman -Rdd --noconfirm llvm-libs mesa
-yay -S --noconfirm conan aria2 noto-fonts-cjk ttf-opensans ttf-meslo-nerd-font-powerlevel10k gstreamer mesa-demos libva-utils vulkan-tools llvm-git llvm-libs-git lib32-llvm-git clang-git meson mesa-git lib32-mesa-git vulkan-radeon-git lib32-vulkan-radeon-git linux-tkg-pds-zen linux-tkg-pds-zen-headers
+yay -S --noconfirm conan aria2 noto-fonts-cjk ttf-opensans ttf-meslo-nerd-font-powerlevel10k gstreamer mesa-demos libva-utils vulkan-tools llvm-git llvm-libs-git clang-git meson mesa-git vulkan-radeon-git linux-tkg-pds linux-tkg-pds-headers brave-bin
 #Others
 yay -S --noconfirm plasma-meta arc-kde-git arc-gtk-theme plasma5-applets-eventcalendar spectacle qbittorrent mangohud goverlay-git  psensor ark gwenview krename steam gnome-disk-utility nano qdirstat-git grub-customizer htop gedit bc gparted audacious systemd-swap kde-servicemenus-rootactions qmplay2-git ffmpegthumbs neofetch papirus-folders-git 
 if [ $? -ne 0 ]; then 

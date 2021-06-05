@@ -33,7 +33,7 @@ Architecture = auto
 # Misc options
 #UseSyslog
 Color
-TotalDownload
+
 CheckSpace
 #VerbosePkgLists
 ILoveCandy
@@ -262,4 +262,12 @@ Include = /etc/pacman.d/mirrorlist
 #Server = file:///home/custompkgs
 [chaotic-aur]
 Include = /etc/pacman.d/chaotic-mirrorlist" | sudo tee /etc/pacman.conf >&-
+}
+
+chaotic () {
+#Set up keys
+sudo pacman-key --init
+sudo pacman-key --recv-key 3056513887B78AEB
+sudo pacman-key --lsign-key 3056513887B78AEB
+sudo pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-'{keyring,mirrorlist}'.pkg.tar.zst'
 }

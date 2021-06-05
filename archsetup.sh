@@ -5,12 +5,12 @@ if [ -d "/home/rusbel/Arch-setup" ] ; then
 else
  :
 fi
-pacman_conf_signoff
-sudo pacman -Syyu
-sudo pacman -S --noconfirm git yay-bin
+sudo pacman -S --noconfirm git y
 #sudo reflector --latest 10 --sort rate --save /etc/pacman.d/mirrorlist
 git clone https://github.com/C1fer/Arch-setup.git  && cd Arch-setup
 source ./functions.sh
+pacman_conf_signoff
+sudo pacman -Syyu && sudo pacman -S --noconfirm yay-bin
 sudo cpupower frequency-set -g performance
 sudo sed -i 's/MAKEFLAGS="-j2"/MAKEFLAGS="-j$(nproc)"/' "/etc/makepkg.conf"
 #sudo sed -i 's/governor='performance'/governor='performance'/g' /etc/default/cpupower 

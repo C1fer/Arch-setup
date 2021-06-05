@@ -16,6 +16,7 @@ sudo sed -i 's/MAKEFLAGS="-j2"/MAKEFLAGS="-j$(nproc)"/' "/etc/makepkg.conf"
 #sudo sed -i 's/governor='performance'/governor='performance'/g' /etc/default/cpupower 
 
 #Set up keys
+sudo pacman-key --init
 sudo pacman-key --recv-key 3056513887B78AEB
 sudo pacman-key --lsign-key 3056513887B78AEB
 sudo pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-'{keyring,mirrorlist}'.pkg.tar.zst'

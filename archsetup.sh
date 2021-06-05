@@ -5,6 +5,7 @@ if [ -d "/home/rusbel/Arch-setup" ] ; then
 else
  :
 fi
+pacman_conf_signoff
 sudo pacman -Syyu
 sudo pacman -S --noconfirm git yay-bin
 #sudo reflector --latest 10 --sort rate --save /etc/pacman.d/mirrorlist
@@ -14,13 +15,7 @@ sudo cpupower frequency-set -g performance
 sudo sed -i 's/MAKEFLAGS="-j2"/MAKEFLAGS="-j$(nproc)"/' "/etc/makepkg.conf"
 #sudo sed -i 's/governor='performance'/governor='performance'/g' /etc/default/cpupower 
 
-pacman_conf_signoff
-#mirrors
 #Set up keys
-#sudo rm -rf /etc/pacman.d/gnupg/gpg.conf
-#sudo pacman-key --init
-#echo keyserver hkp://ipv4.pool.sks-keyservers.net:11371 | sudo tee -a /etc/pacman.d/gnupg/gpg.conf
-#sudo pacman-key --populate archlinux
 sudo pacman-key --recv-key 3056513887B78AEB
 sudo pacman-key --lsign-key 3056513887B78AEB
 sudo pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-'{keyring,mirrorlist}'.pkg.tar.zst'
@@ -58,3 +53,8 @@ amdgpu_conf
 amdgpu_oc
 ds4_touchpad 
 enable_bt
+
+#sudo rm -rf /etc/pacman.d/gnupg/gpg.conf
+#sudo pacman-key --init
+#echo keyserver hkp://ipv4.pool.sks-keyservers.net:11371 | sudo tee -a /etc/pacman.d/gnupg/gpg.conf
+#sudo pacman-key --populate archlinux

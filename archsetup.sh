@@ -11,7 +11,7 @@ git clone https://github.com/C1fer/Arch-setup.git  && cd Arch-setup
 source ./functions.sh
 chaotic
 pacman_conf_signoff
-sudo pacman -Syyu && sudo pacman -S --noconfirm yay-bin
+sudo pacman -Syy && sudo pacman -S --noconfirm yay-bin
 sudo cpupower frequency-set -g performance
 sudo sed -i 's/MAKEFLAGS="-j2"/MAKEFLAGS="-j$(nproc)"/' "/etc/makepkg.conf"
 #sudo sed -i 's/governor='performance'/governor='performance'/g' /etc/default/cpupower 

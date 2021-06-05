@@ -123,29 +123,11 @@ sudo systemctl enable zram
 
 #fstab
 fstab () {
-echo "UUID=B0D64370D643363E /mnt/Disco\040Local\040C  ntfs-3g  nodev,nofail,x-gvfs-show,uid=1000,guid=1000 0 0
+echo "UUID=A07822F57822CA3C /mnt/Disco\040Local\040C  ntfs-3g  nodev,nofail,x-gvfs-show,uid=1000,guid=1000 0 0
 UUID=D2F27AE4F27ACC6B /mnt/Disco\040Local\040D  ntfs-3g  nodev,nofail,x-gvfs-show,uid=1000,guid=1000 0 0
 UUID=10EC8ED5EC8EB48E /mnt/Disco\040Local\040E  ntfs-3g  nosuid,nodev,nofail,x-gvfs-show 0 0
 UUID=5864C15F64C1408C /mnt/Disco\040Local\040F  ntfs-3g  nodev,nofail,x-gvfs-show,uid=1000,guid=1000 0 0
 UUID=70720F9C720F65E6 /mnt/Rusbel               ntfs-3g  nosuid,nodev,nofail,x-gvfs-show 0 0" | sudo tee -a /etc/fstab >&-
-}
-
-#Mirror list
-mirrors () {
-echo "# Arch Linux repository mirrorlist
-#
-# Worldwide
-Server = http://mirrors.evowise.com/archlinux/\$repo/os/\$arch
-Server = http://mirror.rackspace.com/archlinux/\$repo/os/\$arch
-Server = https://mirror.rackspace.com/archlinux/\$repo/os/\$arch
-
-# Misc
-Server = https://mirror.osbeck.com/archlinux/\$repo/os/\$arch
-Server = http://mirrors.kernel.org/archlinux/\$repo/os/\$arch
-Server = http://archlinux.cu.be/\$repo/os/\$arch
-Server = http://mirror.mia11.us.leaseweb.net/archlinux/\$repo/os/\$arch
-Server = http://mirror.dal10.us.leaseweb.net/archlinux/\$repo/os/\$arch
-Server = http://mirror.onet.pl/pub/mirrors/archlinux/\$repo/os/\$arch" | sudo tee /etc/pacman.d/mirrorlist >&-
 }
 
 #Xorg config

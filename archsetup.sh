@@ -9,18 +9,12 @@ sudo pacman -S --noconfirm git
 #sudo reflector --latest 10 --sort rate --save /etc/pacman.d/mirrorlist
 git clone https://github.com/C1fer/Arch-setup.git  && cd Arch-setup
 source ./functions.sh
+chaotic
 pacman_conf_signoff
 sudo pacman -Syyu && sudo pacman -S --noconfirm yay-bin
 sudo cpupower frequency-set -g performance
 sudo sed -i 's/MAKEFLAGS="-j2"/MAKEFLAGS="-j$(nproc)"/' "/etc/makepkg.conf"
 #sudo sed -i 's/governor='performance'/governor='performance'/g' /etc/default/cpupower 
-
-#Set up keys
-sudo pacman-key --init
-sudo pacman-key --recv-key 3056513887B78AEB
-sudo pacman-key --lsign-key 3056513887B78AEB
-sudo pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-'{keyring,mirrorlist}'.pkg.tar.zst'
-
 
 #SOFTWARE
 yay -S --noconfirm pacman-contrib zsh-theme-powerlevel10k p7zip unrar  fuseiso base-devel ninja cmake sdl2 qt5 python2 python-pip boost catch2 fmt libzip lz4 mbedtls nlohmann-json openssl opus zlib ccache zstd ntfs-3g ufw gufw wget nano  bluez bluez-utils

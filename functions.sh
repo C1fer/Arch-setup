@@ -269,4 +269,6 @@ chaotic () {
 sudo pacman-key --recv-key 3056513887B78AEB
 sudo pacman-key --lsign-key 3056513887B78AEB
 sudo pacman -U --noconfirm 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-'{keyring,mirrorlist}'.pkg.tar.zst'
+sudo cp /etc/pacman.d/chaotic-mirrorlist /etc/pacman.d/chaotic-mirrorlist.backup
+sudo rankmirrors -n 6 /etc/pacman.d/chaotic-mirrorlist.backup > /etc/pacman.d/chaotic-mirrorlist
 }

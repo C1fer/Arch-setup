@@ -5,7 +5,7 @@ if [ -d "/home/rusbel/Arch-setup" ] ; then
 else
  :
 fi
-sudo pacman -S --noconfirm git
+sudo pacman -S --noconfirm git pacman-contrib
 #sudo reflector --latest 10 --sort rate --save /etc/pacman.d/mirrorlist
 git clone https://github.com/C1fer/Arch-setup.git  && cd Arch-setup
 source ./functions.sh

@@ -29,7 +29,7 @@ else
  fi
  
 #Cleaning
-sudo pacman -Rdd --noconfirm vim chromium discover oxygen plasma-thunderbolt plasma-browser-integration
+sudo pacman -Rdd --noconfirm vim chromium discover oxygen plasma-thunderbolt plasma-browser-integration qt5-doc
 yay -Sc --noconfirm && sudo pacman -Rns --noconfirm $(pacman -Qtdq)
 sudo rm -rf /var/cache/pacman/pkg ~/.cache/yay
 #pacman_conf
